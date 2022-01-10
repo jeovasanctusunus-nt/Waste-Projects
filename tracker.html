@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang ="en"> 
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<title>Tracking location</title>
+</head>
+	<body>
+		<button id="start">Start</button>
+		<button id="stop">Stop</button>
+
+		<script>	
+			const start = document.querySelector("#start");
+			const stop = document.querySelector("#stop");
+		
+			start.addEventlistener("click", () => {
+				navigator.geolocation.getCurrentPosition(
+					data => {
+						console.log(data);
+					},
+					error => console.log(error)
+				);
+			});
+		</script>
+	</body>
+</html>
